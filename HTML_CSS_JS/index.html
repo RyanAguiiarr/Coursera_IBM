@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ryan Aguiar - Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div id="brand">RYAN AGUIAR</div>
+      <ul>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#projects">Detalhes do projeto</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#recommendations">Recomendações</a></li>
+      </ul>
+    </nav>
+
+    <section id="about" class="container">
+      <div class="profile-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          alt="Foto de Perfil"
+          class="profile-img"
+        />
+        <h1>Olá, eu sou o Ryan!</h1>
+        <p>
+          Sou um Programador apaixonado por Java, Spring Boot e React Native.
+          Atualmente estagiário na Prefeitura de Novo Horizonte, focado em criar
+          soluções eficientes para gestão pública e automação.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2>Habilidades</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
+            alt="HTML"
+          />
+          <p>HTML5</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+            alt="CSS"
+          />
+          <p>CSS3</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/226/226777.png"
+            alt="Java"
+          />
+          <p>Java</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/919/919851.png"
+            alt="React"
+          />
+          <p>React Native</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+            alt="Spring"
+          />
+          <p>Spring Boot</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <h2>Detalhes do Projeto</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Sistema de Gestão Municipal</h3>
+          <p>
+            Desenvolvimento de módulos para controle de despesas e orçamento
+            usando Java e planilhas automatizadas.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>Gerador de Posts LinkedIn</h3>
+          <p>
+            Aplicação SaaS Fullstack utilizando Java (Backend) e React
+            (Frontend) com integração de IA Generativa.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>Semana da Computação (SEMAC)</h3>
+          <p>
+            Criação de site e identidade visual para o evento acadêmico do IFSP.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="recommendations" class="container">
+      <h2>Recomendações</h2>
+      <div id="rec-list">
+        <div class="rec-card">
+          "Trabalhar com o Ryan é excelente. Ele domina muito bem o Spring
+          Boot!" - Vitor Biller
+        </div>
+        <div class="rec-card">
+          "A dedicação dele na organização da SEMAC foi fundamental para o
+          sucesso do evento." - Coordenador IFSP
+        </div>
+        <div class="rec-card">
+          "Ótimo desenvolvedor, resolveu nossos problemas de planilhas
+          rapidamente." - Setor de Orçamento
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Deixe uma recomendação</h3>
+        <input
+          type="text"
+          id="new-rec-text"
+          placeholder="Sua mensagem aqui..."
+        />
+        <button onclick="addRecommendation()">Enviar</button>
+      </div>
+    </section>
+
+    <footer>
+      <a href="#about">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
+          alt="Home Icon"
+          class="home-icon"
+        />
+      </a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
