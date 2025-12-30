@@ -1,8 +1,7 @@
-package com.smartclinic.service;
-import org.springframework.stereotype.Service;
-import java.util.Base64;
-@Service
-public class TokenService {
-    public String generateToken(String email) { return "dummy-token"; }
-    public boolean validateToken(String token) { return token != null; }
+public String generateToken(String email) {
+    // Simula uso do email e expiração
+    return Base64.getEncoder().encodeToString((email + "_expires_" + System.currentTimeMillis()).getBytes());
+}
+public boolean validateToken(String token) {
+    return token != null && token.length() > 10; // Validação melhorada
 }

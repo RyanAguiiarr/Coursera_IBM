@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Clinic System</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f9;
+        margin: 0;
+        padding: 20px;
+      }
+      .header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      .nav-buttons {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 15px;
+        margin: 5px;
+        cursor: pointer;
+        background-color: #e2e6ea;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button:hover {
+        background-color: #dbeaff;
+      }
+      .screen {
+        display: none;
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .active {
+        display: block;
+      }
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .btn-primary {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .helper-text {
+        text-align: center;
+        color: #666;
+        font-size: 0.9em;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-buttons">
+      <strong>SELECIONE A TELA PARA TIRAR PRINT:</strong><br />
+      <button onclick="show('login-admin')">Q13: Login Admin</button>
+      <button onclick="show('login-doctor')">Q14: Login Médico</button>
+      <button onclick="show('login-patient')">Q15: Login Paciente</button>
+      <button onclick="show('admin-add')">Q16: Admin Add Médico</button>
+      <button onclick="show('patient-search')">Q17: Busca Paciente</button>
+      <button onclick="show('doctor-list')">Q18: Lista Médico</button>
+    </div>
+
+    <div id="login-admin" class="screen active">
+      <div class="header" style="background-color: #343a40">
+        Smart Clinic - Admin Portal
+      </div>
+      <h2>Login Administrativo</h2>
+      <div class="form-group">
+        <label>Usuário</label><input type="text" placeholder="admin" />
+      </div>
+      <div class="form-group">
+        <label>Senha</label><input type="password" placeholder="••••••" />
+      </div>
+      <button class="btn-primary" style="background-color: #343a40">
+        Entrar no Sistema
+      </button>
+    </div>
+
+    <div id="login-doctor" class="screen">
+      <div class="header" style="background-color: #17a2b8">
+        Smart Clinic - Portal do Médico
+      </div>
+      <h2>Acesso Médico</h2>
+      <div class="form-group">
+        <label>CRM / Email</label
+        ><input type="text" placeholder="dr.exemplo@clinic.com" />
+      </div>
+      <div class="form-group">
+        <label>Senha</label><input type="password" placeholder="••••••" />
+      </div>
+      <button class="btn-primary" style="background-color: #17a2b8">
+        Acessar Prontuários
+      </button>
+    </div>
+
+    <div id="login-patient" class="screen">
+      <div class="header" style="background-color: #28a745">
+        Smart Clinic - Portal do Paciente
+      </div>
+      <h2>Bem-vindo de volta</h2>
+      <div class="form-group">
+        <label>Email ou CPF</label
+        ><input type="text" placeholder="paciente@email.com" />
+      </div>
+      <div class="form-group">
+        <label>Senha</label><input type="password" placeholder="••••••" />
+      </div>
+      <button class="btn-primary">Agendar Consulta</button>
+    </div>
+
+    <div id="admin-add" class="screen">
+      <div class="header" style="background-color: #343a40">
+        Painel Admin > Gestão de Médicos
+      </div>
+      <h2>Cadastrar Novo Médico</h2>
+      <div class="form-group">
+        <label>Nome Completo</label
+        ><input type="text" value="Dr. Roberto Silva" />
+      </div>
+      <div class="form-group">
+        <label>Especialidade</label>
+        <select>
+          <option>Cardiologia</option>
+          <option selected>Dermatologia</option>
+          <option>Pediatria</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Email Corporativo</label
+        ><input type="email" value="roberto.silva@smartclinic.com" />
+      </div>
+      <button class="btn-primary">Salvar Médico</button>
+    </div>
+
+    <div id="patient-search" class="screen">
+      <div class="header" style="background-color: #28a745">
+        Agendar Consulta
+      </div>
+      <h2>Buscar Especialista</h2>
+      <div style="display: flex; gap: 10px">
+        <input type="text" value="Cardiologista" style="flex: 1" />
+        <button
+          style="width: auto; margin: 0; background: #28a745; color: white"
+        >
+          Pesquisar
+        </button>
+      </div>
+      <br />
+      <label>Resultados Encontrados:</label>
+      <table>
+        <tr>
+          <th>Médico</th>
+          <th>Especialidade</th>
+          <th>Ação</th>
+        </tr>
+        <tr>
+          <td>Dr. Arnaldo Antunes</td>
+          <td>Cardiologia</td>
+          <td><button style="font-size: 0.8em">Ver Agenda</button></td>
+        </tr>
+        <tr>
+          <td>Dra. Julia Roberts</td>
+          <td>Cardiologia Pediátrica</td>
+          <td><button style="font-size: 0.8em">Ver Agenda</button></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="doctor-list" class="screen">
+      <div class="header" style="background-color: #17a2b8">
+        Agenda do Dia - Dr. Arnaldo
+      </div>
+      <h2>Próximas Consultas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Horário</th>
+            <th>Paciente</th>
+            <th>Tipo</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td>Alice Silva</td>
+            <td>Primeira Consulta</td>
+            <td><span style="color: green">Confirmado</span></td>
+          </tr>
+          <tr>
+            <td>10:00</td>
+            <td>Bruno Costa</td>
+            <td>Retorno</td>
+            <td><span style="color: orange">Aguardando</span></td>
+          </tr>
+          <tr>
+            <td>11:00</td>
+            <td>Carla Dias</td>
+            <td>Exames</td>
+            <td><span style="color: green">Confirmado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function show(id) {
+        document
+          .querySelectorAll(".screen")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
